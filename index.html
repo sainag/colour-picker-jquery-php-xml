@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width,minimal-ui, initial-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />  
+<title>Axent RGB NATA - Home</title>
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/spectrum.css">
+<script type="text/javascript" src="javascript/jquery-1.11.2.min.js"></script>
+<!--[if lt IE 11]><script src="javascript/jquery.xdomainrequest.min.js"></script><![endif]-->
+<script type="text/javascript" src="javascript/spectrum.js"></script>
+<script>
+  $(document).ready(function(e) {
+    $("#colorHex").val('');
+	$("#colorPickerHolder").spectrum({
+	  color: "#f00f00",
+	  preferredFormat: "rgb",
+	  flat: true,
+	  showInput: true
+	});
+	$("#brightnessMode").bind('click',function(){
+	  signBrightnessSettings();
+	});
+	$("#colorPickerHolder .sp-input-r, #colorPickerHolder .sp-input-g, #colorPickerHolder .sp-input-b").bind('change',function(){
+	  var textInputR=$("#colorPickerHolder .sp-input-r").val()==''?0:$("#colorPickerHolder .sp-input-r").val();
+	  var textInputG=$("#colorPickerHolder .sp-input-g").val()==''?0:$("#colorPickerHolder .sp-input-g").val();
+	  var textInputB=$("#colorPickerHolder .sp-input-b").val()==''?0:$("#colorPickerHolder .sp-input-b").val();
+	  var rgbValue="RGB ("+textInputR+", "+textInputG+", "+textInputB+")";
+	  if(rgbValue!=$("#colorPickerHolder .sp-input").val())
+	    $(".sp-input").val(rgbValue).trigger('change');
+	});
+  });
+  var signIPAddress=window.location.protocol + "//" + window.location.hostname;
+  var sUrl = signIPAddress+":42000";
+  sUrl="http://192.168.0.10:42000";
+  var jsonRequest = {};
+  jsonRequest.jsonrpc = "2.0";
+  jsonRequest.method = "";
+  jsonRequest.params = {};
+  jsonRequest.id = 1;
+  var jsonData = {'signIPAddress': signIPAddress+':42000','jsonRequest': ''};
+  var sendColour=function(mode,colour){
+    jsonRequest.method="display.test_mode";
+	jsonRequest.params['mode']=mode;
+	if(mode!=0) jsonRequest.params['colour']=parseInt(colour);
+	$.ajax({
+	  type: 'POST',
+	  url:sUrl,
+	  data:JSON.stringify(jsonRequest),
+	  dataType:'json',
+	  cache: false,
+	  success:function(data){
+	    
+	  }
+	});
+  };
+  var signBrightnessSettings=function(){
+ 	jsonRequest.method="display.brightness";
+	if(!$("#brightnessMode").is(":checked"))
+	  jsonRequest.params=[parseInt($('#brightnessValue').val()),true];
+	else
+	  jsonRequest.params=[parseInt($('#brightnessValue').val()),false];
+	$.ajax({
+	  type: 'POST',
+	  url:sUrl,
+	  data:JSON.stringify(jsonRequest),
+	  dataType:'json',
+	  cache: false,
+	  success:function(data){
+	    
+	  }
+	});
+  };
+</script>
+</head>
+<body>
+  <div class="background">
+    <div id="body-container">
+      <div class="header">
+        <div class="left"><img src="images/axent-header-logo.png" title="Axent - Solutions for Life"/></div>
+      </div>
+      <div id="menu"></div>
+      <p id="colorPickerHolder"></p>
+      <fieldset>
+  		<legend>Brightness:</legend>
+        <input type="range" id="brightnessValue" min="0" max="15">
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="brightnessMode" checked>
+          <label class="onoffswitch-label" for="brightnessMode">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+        <button type="button" onclick="signBrightnessSettings()">Send</button>
+      </fieldset>
+      <input type="hidden" id="colorHex" />
+    </div>
+  </div>
+  <div id="pageLoading" class="popupDialog" style="display:none"><img src="images/loadinfo.net.gif" />Loading...</div>
+</body>
+</html>

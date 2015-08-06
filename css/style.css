@@ -1,0 +1,113 @@
+html,body{
+  padding:0;
+  margin:0;
+}
+.header{
+  border-bottom:solid 1px #DDDDDD;
+  border-top:none;
+  border-radius:5px 5px 0 0;
+  text-align:center;
+}
+.header .left img{
+  max-height:56px;
+}
+#colorPickerHolder{
+  text-align:center;
+}
+#colorPickerHolder .sp-input-r,
+#colorPickerHolder .sp-input-g,
+#colorPickerHolder .sp-input-b{
+  font: bold 11px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: auto;
+}
+fieldset{
+  text-align:center;
+  font:11px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width:245px;
+  margin:auto;
+  text-align:center;
+  border-radius:5px;
+  border:solid 1px #828282;
+}
+fieldset input[type='range']{
+  cursor:pointer;
+  width:220px;
+  margin:20px 0;
+}
+fieldset button{
+  float:right;
+  background-color: #eeeeee;
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(to bottom, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font-size: 11px;
+  font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1;
+  padding: 5px 4px;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  vertical-align: middle;
+}
+fieldset button:hover {
+  background-color: #dddddd;
+  background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: linear-gradient(to bottom, #dddddd, #bbbbbb);
+  border: 1px solid #bbb;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #ddd;
+}
+.onoffswitch {
+    position: relative; width: 82px;float:left;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 11px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Manual";
+    padding-left: 0px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "Auto";
+    padding-right: 9px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 8px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 58px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
