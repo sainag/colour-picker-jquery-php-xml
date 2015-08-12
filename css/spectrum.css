@@ -279,6 +279,16 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     margin-bottom: 4px;
 	font:11px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+@media (min-width: 480px) and (max-width: 767px) {
+  .sp-input-container {
+    width: 400px;
+  }
+}
+@media (min-width: 768px){
+  .sp-input-container {
+    width: 700px;
+  }
+}
 .sp-initial-disabled  .sp-input-container {
    /* width: 100%;*/
 }

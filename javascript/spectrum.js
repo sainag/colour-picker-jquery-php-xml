@@ -766,6 +766,7 @@
 
             var realColor = get({ format: format }),
                 displayColor = '';
+			
 			$("#colorHex").val(realColor.toHexString());
              //reset background info for preview element
             previewElement.removeClass("sp-clear-display");
@@ -1242,8 +1243,7 @@
         if (!(this instanceof tinycolor)) {
             return new tinycolor(color, opts);
         }
-
-        var rgb = inputToRGB(color);
+		var rgb = inputToRGB(color);
         this._originalInput = color,
         this._r = rgb.r,
         this._g = rgb.g,
@@ -1257,10 +1257,11 @@
         // Potentially lose a little bit of precision here, but will fix issues where
         // .5 gets interpreted as half of the total, instead of half of 1
         // If it was supposed to be 128, this was already taken care of by `inputToRgb`
-        if (this._r < 1) { this._r = mathRound(this._r); }
+        
+		if (this._r < 1) { this._r = mathRound(this._r); }
         if (this._g < 1) { this._g = mathRound(this._g); }
         if (this._b < 1) { this._b = mathRound(this._b); }
-
+		
         this._ok = rgb.ok;
         this._tc_id = tinyCounter++;
     };
@@ -1334,8 +1335,8 @@
 			$("#colorPickerHolder .sp-input-r").val(mathRound(this._r));
 			$("#colorPickerHolder .sp-input-g").val(mathRound(this._g));
 			$("#colorPickerHolder .sp-input-b").val(mathRound(this._b));
-            return (this._a == 1) ?
-              "RGB ("  + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ")" :
+			return (this._a == 1) ?
+              "rgb("  + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ")" :
               "rgba(" + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ", " + this._roundA + ")";
         },
         toPercentageRgb: function() {
