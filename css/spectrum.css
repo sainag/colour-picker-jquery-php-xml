@@ -286,7 +286,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 @media (min-width: 768px){
   .sp-input-container {
-    width: 700px;
+    width: 650px;
+    font:25px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
 .sp-initial-disabled  .sp-input-container {

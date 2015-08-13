@@ -20,6 +20,13 @@ html,body{
   font: bold 11px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: auto;
 }
+@media (min-width: 768px){
+  #colorPickerHolder .sp-input-r,
+  #colorPickerHolder .sp-input-g,
+  #colorPickerHolder .sp-input-b{
+    font: bold 22px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
 fieldset{
   text-align:center;
   font:11px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
