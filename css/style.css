@@ -61,6 +61,11 @@ fieldset button{
   text-shadow: 0 1px 0 #eee;
   vertical-align: middle;
 }
+@media (min-width: 768px){
+  fieldset button{
+    font-size: 22px;	  
+  }
+}
 fieldset button:hover {
   background-color: #dddddd;
   background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
