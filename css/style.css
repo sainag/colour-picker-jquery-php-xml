@@ -13,6 +13,18 @@ html,body{
 }
 #colorPickerHolder{
   text-align:center;
+  width:260px;
+  margin:10px auto;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  #colorPickerHolder{
+    width:400px;
+  }
+}
+@media (min-width: 768px){
+  #colorPickerHolder{
+    width:670px;
+  }
 }
 #colorPickerHolder .sp-input-r,
 #colorPickerHolder .sp-input-g,
@@ -27,19 +39,31 @@ html,body{
     font: bold 22px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
+@media (min-width: 768px){
+  .optionsDiv{
+	height: 180px;
+	margin: auto;
+	width: 670px;
+  }
+}
 fieldset{
   text-align:center;
   font:11px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
   width:245px;
-  margin:auto;
-  text-align:center;
+  margin:auto auto 20px;
   border-radius:5px;
   border:solid 1px #828282;
 }
-fieldset input[type='range']{
+@media (min-width: 768px){
+fieldset{
+  margin:auto;
+}
+}
+fieldset select{
   cursor:pointer;
-  width:220px;
-  margin:20px 0;
+  width:auto;
+  line-height:20px;
+  margin:0 0 10px;
 }
 fieldset button{
   float:right;
@@ -122,4 +146,42 @@ fieldset button:hover {
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px; 
+}
+.colorValues{
+  border: 1px solid #828282;
+  border-radius: 5px;
+  font: 11px Gotham,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin:20px auto; 
+  width: 300px;
+}
+@media (min-width: 768px){
+  .colorValues{
+	width: 350px; 
+    float:left;
+	margin: 0 auto 0 20px;
+  }
+}
+.colorValues > p {
+  margin: 0;
+  padding: 5px;
+  width: auto;
+}
+.colorValues button {
+  cursor: pointer;
+  width: 20%;
+}
+@media (min-width: 768px){
+  .colorValues button {
+    width: 25%;
+  }
+}
+.colorValues button.colorSend{
+  float:right;
+}
+.colorValues span {
+  margin-left: 5%;
+  text-align: center;
+}
+.colorValues label {
+  font-weight: bold;
 }

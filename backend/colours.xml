@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<colours>
+  <colour id="color0">
+    <Red>76</Red>
+	<Green>39</Green>
+	<Blue>37</Blue>
+  </colour>
+  <colour id="color1">
+    <Red>120</Red>
+	<Green>56</Green>
+	<Blue>51</Blue>
+  </colour>
+  <colour id="color2">
+    <Red>46</Red>
+	<Green>52</Green>
+	<Blue>129</Blue>
+  </colour>
+  <colour id="color3">
+    <Red>240</Red>
+	<Green>163</Green>
+	<Blue>0</Blue>
+  </colour>
+  <colour id="color4">
+    <Red>255</Red>
+	<Green>255</Green>
+	<Blue>255</Blue>
+  </colour>
+</colours>
